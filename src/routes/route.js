@@ -9,11 +9,16 @@ import Dashboard from '../pages/Dashboard.vue'
 import Timesheet from '../pages/Timesheet.vue'
 import Project from '../pages/Project.vue'
 import Profile from '../pages/Profile.vue'
+import DashboardAlt from '../pages/DashboardAlt.vue'
 
 const routes = [
     {
     path: '/',
     component: Home
+    },
+    {
+    path: '/dashboard-alt',
+    component: DashboardAlt
     },
    {
       path: '/app',
