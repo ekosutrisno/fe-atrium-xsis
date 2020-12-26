@@ -124,10 +124,116 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 overflow-y-auto p-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5">
-      <div v-for="(a,b) in 23" :key="b" class="h-64 rounded bg-white ring-1 ring-gray-200 hover:shadow-lg cursor-pointer"></div>
+    <div class="flex-1 overflow-y-auto px-4 py-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div  v-for="(project,idx) in projects" :key="idx" class="h-full max-h-80 p-4 rounded bg-white ring-1 ring-gray-200 hover:shadow-lg cursor-pointer">
+        <h1 class="font-semibold text-lg">SAP Basic Promotions Service</h1>
+        <h1 class="text-xs font-semibold">Project ID.{{project.projectId}} </h1>
+        <p class="text-sm mt-2 font-medium">
+          <span class="font-semibold">Project Description</span>Roles that may include capacity planning, installation, configuration, database design, migration, performance monitoring, security, trouble detection and data backup and recovery.
+        </p>
+        <div class="w-full flex items-center justify-start space-x-2 mt-4">
+          <button class="py-0.5 px-1.5 bg-white text-xs inline-flex items-center space-x-1 hover:bg-gray-100 rounded ring-1 ring-gray-200">
+            <svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Attachment</span>
+          </button>
+          <button class="py-0.5 px-1.5 bg-white text-xs inline-flex items-center space-x-1 hover:bg-gray-100 rounded ring-1 ring-gray-200">
+            <svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Repository</span>
+          </button>
+          <button class="py-0.5 px-1.5 bg-white text-xs inline-flex items-center space-x-1 hover:bg-gray-100 rounded ring-1 ring-gray-200">
+            <svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Details</span>
+          </button>
+        </div>
+        <div class="flex mt-4 items-center justify-between">
+          <h1 class="font-semibold text-sm">Due Date Jan 04, 2020</h1>
+        </div>
+        <p class="text-xs font-medium mt-2">
+          <span class="bg-indigo-100 py-0.5 px-1.5 rounded-full">#backend</span>
+          <span class="bg-indigo-100 py-0.5 px-1.5 rounded-full">#backend</span>
+          <span class="bg-indigo-100 py-0.5 px-1.5 rounded-full">#backend</span>
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
 </template>
+<script>
+import { reactive, toRefs } from 'vue'
+export default {
+  setup(){
+    const state = reactive({
+      projects:[
+        {
+          projectId: 'f006fa51-d6ad'
+        },
+        {
+          projectId: 'd2f0a735-5201'
+        },
+        {
+          projectId: '330304d4-ac18'
+        },
+        {
+          projectId: '4c1b2041-e748'
+        },
+        {
+          projectId: '5a2a3c75-245a'
+        },
+        {
+          projectId: '06e0a71e-443d'
+        },
+        {
+          projectId: 'f381cebc-19c1'
+        },
+        {
+          projectId: '010469bb-632a'
+        },
+        {
+          projectId: '05bf6cb7-d8c2'
+        },
+        {
+          projectId: 'a86be354-aaac'
+        },
+        {
+          projectId: '7eae5f8c-0a4e'
+        },
+        {
+          projectId: 'bf3ca2e1-f4c5'
+        },
+        {
+          projectId: 'b4524067-ea8d'
+        },
+        {
+          projectId: '393f9f58-439d'
+        },
+        {
+          projectId: '62c6555f-3a8c'
+        },
+        {
+          projectId: 'fe4d5820-8feb'
+        },
+        {
+          projectId: 'e55fab17-18ab'
+        },
+        {
+          projectId: '0bb49b0f-6119'
+        },
+        {
+          projectId: '1412a306-68df'
+        },
+      ]
+    })
+
+    return{
+      ...toRefs(state)
+    }
+  }
+}
+</script>
