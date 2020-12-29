@@ -1,7 +1,8 @@
 <template>
-  <div class="flex-1 flex flex-col h-full">
-    <div class="p-4 h-36 flex-none flex-shrink-0">
-      <div class="w-full h-16 flex-none flex-shrink-0  flex items-center justify-between border-b py-4">
+<div class="bg-gray-100 flex-1 flex flex-col">
+    <div class="py-2">
+      <div class="px-4 h-36 flex-none flex-shrink-0">
+      <div class="w-full h-16 flex-none flex-shrink-0 flex items-center justify-between border-b">
          <div class="font-semibold text-lg">
             <h1>Performance {{ new Date().getFullYear()}} (Year-To-Date) | Timesheet</h1>
          </div>
@@ -42,9 +43,11 @@
       </div>
      
     </div>
-    <div class="flex-1 overflow-y-auto p-4 mt-6">
+      
+    </div>
+    <div class="flex-1 overflow-y-auto px-4 py-6 w-full">
       <ul class="space-y-2">
-        <li v-for="(timesheet,idx) in 30" :key="idx" >
+        <li v-for="(timesheet,idx) in projects" :key="timesheet.projectId" >
           <TimeSheetItemCard :timesheet="{idx: idx+1}"/>
         </li>
       </ul>
@@ -53,15 +56,74 @@
 </template>
 
 <script>
-import {reactive, ref, toRefs} from 'vue'
+import { reactive, ref, toRefs } from 'vue'
 import TimeSheetItemCard from '../components/widget/TimeSheetItemCard.vue'
 import DropdownOption from '../components/widget/DropdownOption.vue'
-export default {
-  components: { TimeSheetItemCard,DropdownOption },
-    setup(){
-        const showMenu = ref(false)
-        const state = reactive({
-          dates:[
+ export default {
+  components: { TimeSheetItemCard, DropdownOption },
+  setup(){
+    const showMenu = ref(false)
+    const state = reactive({
+      projects:[
+        {
+          projectId: 'f006fa51-d6ad'
+        },
+        {
+          projectId: 'd2f0a735-5201'
+        },
+        {
+          projectId: '330304d4-ac18'
+        },
+        {
+          projectId: '4c1b2041-e748'
+        },
+        {
+          projectId: '5a2a3c75-245a'
+        },
+        {
+          projectId: '06e0a71e-443d'
+        },
+        {
+          projectId: 'f381cebc-19c1'
+        },
+        {
+          projectId: '010469bb-632a'
+        },
+        {
+          projectId: '05bf6cb7-d8c2'
+        },
+        {
+          projectId: 'a86be354-aaac'
+        },
+        {
+          projectId: '7eae5f8c-0a4e'
+        },
+        {
+          projectId: 'bf3ca2e1-f4c5'
+        },
+        {
+          projectId: 'b4524067-ea8d'
+        },
+        {
+          projectId: '393f9f58-439d'
+        },
+        {
+          projectId: '62c6555f-3a8c'
+        },
+        {
+          projectId: 'fe4d5820-8feb'
+        },
+        {
+          projectId: 'e55fab17-18ab'
+        },
+        {
+          projectId: '0bb49b0f-6119'
+        },
+        {
+          projectId: '1412a306-68df'
+        },
+      ],
+      dates:[
             {
               year: 20,
               month: 'January'
@@ -110,16 +172,18 @@ export default {
               year: 20,
               month: 'December'
             },
-          ]
-        })
-        const profileMenuToggle= ()=>{
+      ]
+    })
+    
+     const profileMenuToggle= ()=>{
           showMenu.value = !showMenu.value
         }
-        return{ ...toRefs(state) ,showMenu,profileMenuToggle}
-      }
+
+    return{
+      ...toRefs(state),
+      showMenu,
+      profileMenuToggle
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>

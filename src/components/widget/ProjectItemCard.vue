@@ -1,5 +1,5 @@
 <template>
-<div class="w-full group font-semibold flex items-center justify-between h-16 p-2 cursor-pointer bg-white ring-1 hover:ring-2 ring-indigo-200 hover:ring-indigo-800 text-green-800 rounded">
+<div class="w-full group font-semibold flex items-center justify-between h-24 p-2 cursor-pointer bg-white ring-1 hover:ring-2 ring-gray-200 text-green-800 rounded">
    <div class="inline-flex space-x-6 items-center">
    <div>
       <span class="text-xs py-1 px-3 border text-indigo-800 rounded-full font-semibold">{{ timesheet.idx}}</span>
@@ -10,7 +10,7 @@
    </div>
    <div>
       <span class="block font-bold">Project</span>
-      <span class="block text-sm">Azec Indonesia Management Service</span>
+      <span class="block text-sm">SAP Core</span>
    </div>
    <div>
       <span class="block font-bold">Start Project</span>

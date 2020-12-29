@@ -1,5 +1,5 @@
 <template>
-<div class="w-full font-semibold transform hover:scale-cs01 transition-transform flex items-center justify-between h-16 p-2 cursor-pointer bg-white ring-1 ring-green-400 hover:ring-2 text-green-800 rounded">
+<div class="w-full font-semibold transform hover:scale-cs01 transition-transform flex items-center justify-between h-16 p-2 cursor-pointer bg-white ring-1 ring-gray-200 hover:ring-2 text-green-800 rounded">
    <div class="inline-flex space-x-6 items-center">
    <div>
       <span class="text-xs text-gray-100 py-1 px-3 bg-green-400 rounded-full font-semibold">M</span>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Layouts
 import AppLayout from '../layouts/AppLayout.vue'
+import DashboardLayout from '../layouts/DashboardLayout.vue'
 
 // Pages
 import Home from '../pages/Home.vue'
@@ -9,7 +10,9 @@ import Dashboard from '../pages/Dashboard.vue'
 import Timesheet from '../pages/Timesheet.vue'
 import Project from '../pages/Project.vue'
 import Profile from '../pages/Profile.vue'
-import DashboardAlt from '../pages/DashboardAlt.vue'
+
+import ProjectAlt from '../pages/ProjectAlt.vue'
+import TimesheetAlt from '../pages/TimesheetAlt.vue'
 
 const routes = [
     {
@@ -18,9 +21,19 @@ const routes = [
     },
     {
     path: '/dashboard-alt',
-    component: DashboardAlt
+    component: DashboardLayout,
+    children:[
+      {
+        path: '/project-alt',
+        component: ProjectAlt
+      },
+      {
+        path: '/timesheet-alt',
+        component: TimesheetAlt
+      },
+    ]
     },
-   {
+    {
       path: '/app',
       component: AppLayout,
       children: [
